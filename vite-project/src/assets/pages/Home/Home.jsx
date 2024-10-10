@@ -1,7 +1,7 @@
 import React from 'react';
 import CardsSection from '../../components/CardsSection';
 import AddButton from '../../components/AddButton';
-import useFetchGames from '../../hooks/useFetchGames';
+import useFetchGames from '../../hooks/useFetchGames.jsx';
 import useDeleteGame from '../../hooks/useDeleteGame';
 import { useNavigate } from 'react-router-dom';
 import './Home.css';

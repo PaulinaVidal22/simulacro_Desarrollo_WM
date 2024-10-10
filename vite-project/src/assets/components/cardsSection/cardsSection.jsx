@@ -3,6 +3,7 @@ import Card from '../card/card.jsx';
 import './cardsSection.css';
 
 const CardsSection = ({ games, onDelete, onShowDetails }) => {
+
   return (
     <div className="cards-section">
       {games && games.map((game) => (
