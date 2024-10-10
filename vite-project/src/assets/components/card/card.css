@@ -1,0 +1,24 @@
+.card {
+    width: 100%; 
+    /* padding: 0.2rem; */
+    padding: 2px;
+    margin-bottom: 0.75rem; 
+    background-color: #0056b3;
+    border-color: #0e71db;
+    border-radius: 8px; 
+    height: auto; 
+}
+
+.clickable-card {
+    cursor: pointer;
+}
+
+.clickable-card:hover {
+    background-color: #004080; /* Cambia el color de fondo al pasar el ratón sobre la tarjeta */
+}
+
+.card-title {
+    font-size: 0.9rem; 
+    font-weight: bold; 
+    margin: 0%; 
+}
