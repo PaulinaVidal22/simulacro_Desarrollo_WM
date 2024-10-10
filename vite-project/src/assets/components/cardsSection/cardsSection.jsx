@@ -1,5 +1,6 @@
 import React from 'react';
 import Card from '../card/card.jsx';
+import './cardsSection.css';
 
 const CardsSection = ({ games, onDelete, onShowDetails }) => {
   return (
