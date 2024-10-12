@@ -14,12 +14,13 @@ const GameDetails = () => {
   return (
     <div>
       <button 
-        className="back-button button is-primary" 
-        onClick={() => navigate.push('/')}>Atrás
+        className="back-button button is-primary"
+        //  navigate.push('/')
+        onClick={() =>  navigate("/home")}>Atrás
       </button>
 
       <div className="game-info">
-        <h2 className='game-name title-is-4'>{game.name}</h2>
+        <h2 className='game-name title-is-4'>{game.title}</h2>
         <p className='game-description'>
           <strong className='description-field title-is-6'>
             Descripción: </strong>
@@ -33,7 +34,8 @@ const GameDetails = () => {
         <p className='game-categories'>
           <strong className='categories-field title-is-6'>
             Categorías: </strong>
-            {game.categories.join(', ')}</p>
+            {/* {game.categories.join(', ')} */}
+            {game.categories}</p>
 
       </div>
 

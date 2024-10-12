@@ -1,6 +1,7 @@
-import React from 'react';
-import CardsSection from '../../components/CardsSection';
-import AddButton from '../../components/AddButton';
+import React, { useState } from 'react';
+import CardsSection from '../../components/cardsSection/cardsSection.jsx';
+// import AddButton from '../../components/addButton/addButton.jsx';
+import AddCardModal from '../../components/addCardModal/addCardModal.jsx';
 import useFetchGames from '../../hooks/useFetchGames.jsx';
 import useDeleteGame from '../../hooks/useDeleteGame';
 import { useNavigate } from 'react-router-dom';
@@ -13,7 +14,9 @@ const Home = () => {
   const navigate = useNavigate();
 
   const handleShowDetails = (id) => {
-    navigate.push(`/game/${id}`);
+    // navigate.push(`/game/${id}`);
+    //navigate(`/games/${id}`);
+    navigate(`/home/${id}`);
   };
 
   const handleDelete = async (id) => {
@@ -45,7 +48,8 @@ const Home = () => {
       </nav>
 
       <div className="main-content">
-        <AddButton onAdd={handleAdd} />
+        {/* <AddButton onAdd={handleAdd} /> */}
+        <button className='add-button' onClick={handleAdd}>Agregar juego</button>
         <CardsSection games={games} onDelete={handleDelete} onShowDetails={handleShowDetails} />
         <AddCardModal isOpen={isModalOpen} onClose={closeModal} />
       </div>

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import useAddGame from '../../hooks/useAddGame';
-import 'src/assets/components/addCardModal/addCardModal.css'
+import './addCardModal.css'
 
 const AddCardModal = ({ isOpen, onClose }) => {
   const { addGame } = useAddGame();
@@ -35,7 +35,7 @@ const AddCardModal = ({ isOpen, onClose }) => {
   return (
     <div className="modal">
       <div className="modal-content">
-        <h2>Agregar Nuevo Juego</h2>
+        <h2 className='modal-title'>Agregar Nuevo Juego</h2>
         <form onSubmit={handleSubmit}>
           <div>
             <label>Nombre</label>
@@ -43,7 +43,7 @@ const AddCardModal = ({ isOpen, onClose }) => {
           </div>
           <div>
             <label>Descripción</label>
-            <textarea name="description" value={formData.description} onChange={handleChange} required />
+            <input name="description" value={formData.description} onChange={handleChange} required />
           </div>
           <div>
             <label>Cantidad de Jugadores</label>
@@ -53,8 +53,8 @@ const AddCardModal = ({ isOpen, onClose }) => {
             <label>Categorías (separadas por comas)</label>
             <input type="text" name="categories" value={formData.categories} onChange={handleChange} required />
           </div>
-          <button type="submit">Agregar</button>
-          <button type="button" onClick={onClose}>Cancelar</button>
+          <button type="submit"className='submit-button'>Agregar</button>
+          <button type="button" className='cancel-button' onClick={onClose}>Cancelar</button>
         </form>
       </div>
     </div>

@@ -1,0 +1,63 @@
+{
+    "games": [
+        {
+          "id": 1,
+          "title": "Football",
+          "description":
+            "A game where two teams with 11 players per team play against each other",
+          "players": "22",
+          "categories": "Men / Women"
+        },
+        {
+          "id": 2,
+          "title": "Basketball",
+          "description":
+            "A game where 2 teams with 5 huge tall players compite against each other",
+          "players": "10",
+          "categories": "Men / Women"
+        },
+        {
+          "id": 3,
+          "title": "Tennis",
+          "description": "A game which can be played in singles mode or doubles mode",
+          "players": "2/4",
+          "categories":
+            "Men - Singles & Doubles / Women - Singles & Doubles / Mixed - Doubles"
+        },
+        {
+          "id": 4,
+          "title": "Boxing",
+          "description": "A 1 vs 1 fight",
+          "players": "2",
+          "categories": "Men / Women, several divisions based on weight for both"
+        },
+        {
+          "id": 5,
+          "title": "Volleyball",
+          "description": "2 teams, a net, and a ball",
+          "players": "12",
+          "categories": "Men / Women"
+        },
+        {
+          "id": 6,
+          "title": "Fencing",
+          "description": "The french way of the sword",
+          "players": "2",
+          "categories": "Men / Women"
+        },
+        {
+          "id": 7,
+          "title": "Karate",
+          "description": "Japanese martial art",
+          "players": "2",
+          "categories": "Men / Women"
+        },
+        {
+          "id": 8,
+          "title": "Taekwondo",
+          "description": "Korean martial art, heavily leg focused",
+          "players": "2",
+          "categories": "Men / Women"
+        }
+      ]
+}

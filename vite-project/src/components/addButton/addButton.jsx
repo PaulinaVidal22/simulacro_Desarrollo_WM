@@ -1,7 +1,7 @@
-import React from 'react';
+// import React from 'react';
 
-const AddButton = ({ onAdd }) => {
-  return <button onClick={onAdd}>Agregar juego</button>;
-};
+// const AddButton = ({ onAdd }) => {
+//   return <button onClick={onAdd}>Agregar juego</button>;
+// };
 
-export default AddButton;
+// export default AddButton;

@@ -11,13 +11,59 @@
   }
   
   .modal-content {
-    background-color: white;
     padding: 20px;
     border-radius: 5px;
     width: 400px;
+    border-color: #346C9D;
+    background-color: #5789C7;
+    color:#FBF6F4;
   }
-  
+
+  .modal-title {
+    color:#DBD994;
+  }
+
+  label {
+    color:#FBF6F4;
+    margin: 1rem 0.2rem 1rem 0.2rem ;
+  }
+
+  input {
+    border-color:#DBD994;
+    background-color: #FBF6F4;
+    margin: 1rem 0.2rem 1rem 0.2rem ;
+    color:black;
+  }
+
   button {
     margin: 5px;
+  }
+
+  .submit-button {
+    color:  #DBD994;
+    background-color: #181849;
+    border-color:  #DBD994;
+
+  }
+
+  .submit-button:hover {
+    color: #346C9D;
+    background-color:  #DBD994;
+    border-color: #346C9D;
+
+  }
+
+  .cancel-button {
+    color:  #181849;
+    background-color:#DBD994;
+    border-color: #181849;
+
+  }
+
+  .cancel-button:hover {
+    color: #DBD994;
+    background-color: #346C9D;
+    border-color: #DBD994;
+
   }
   

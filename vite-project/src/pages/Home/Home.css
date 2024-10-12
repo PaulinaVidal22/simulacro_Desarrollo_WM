@@ -2,12 +2,17 @@
     text-align: center;
    }
    
-   .button-container {
-     display: flex;
-   }
-   
-   .customButton {
-     align-items: flex-end;
-     align-self: flex-end;
-     align-content: flex-end;
-   }
+
+  .add-button {
+    color:  #DBD994;
+    background-color: #181849;
+    border-color:  #DBD994;
+
+  }
+
+  .add-button:hover {
+    color: #5789C7;
+    background-color:  #DBD994;
+    border-color: #5789C7;
+
+  }

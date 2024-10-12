@@ -1,12 +1,14 @@
 .card {
     width: 100%; 
-    /* padding: 0.2rem; */
-    padding: 2px;
-    margin-bottom: 0.75rem; 
-    background-color: #0056b3;
-    border-color: #0e71db;
+    padding: 0.2rem;
+    margin: 1rem 0.2rem 0.2rem 0.2rem ;
+    /* background-color: #0056b3; */
+    /* border-color: #0e71db; */
+    background-color: #346C9D;
+    border-color: #5789C7;
     border-radius: 8px; 
-    height: auto; 
+    height: auto;
+    
 }
 
 .clickable-card {
@@ -14,11 +16,36 @@
 }
 
 .clickable-card:hover {
-    background-color: #004080; /* Cambia el color de fondo al pasar el ratón sobre la tarjeta */
+    /* background-color: #004080; Cambia el color de fondo al pasar el ratón sobre la tarjeta */
+    background-color: #181849;
 }
 
 .card-title {
-    font-size: 0.9rem; 
     font-weight: bold; 
     margin: 0%; 
 }
+
+.details-button {
+    color:#FBF6F4;
+    background-color: #DBD994;
+    border-color: #FBF6F4;
+}
+
+.details-button:hover{
+    color: #5789C7;
+    border-color: #5789C7;
+    
+}
+
+.delete-button {
+    color: #DBD994;
+    background-color: #FBF6F4;
+    border-color: #DBD994;
+}
+
+.delete-button:hover{
+    color: #5789C7;
+    border-color: #5789C7;
+    
+}
+
