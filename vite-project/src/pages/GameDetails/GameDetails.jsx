@@ -1,18 +1,19 @@
 import React from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import useFetchGames from '../../hooks/useFetchGames';
+import './GameDetails.css'
 
 const GameDetails = () => {
   const { id } = useParams();
   const navigate = useNavigate();
   const { games } = useFetchGames();
   
-  const game = games.find((game) => game.id === parseInt(id));
+  const game = games.find((game) => game.id === id);
 
   if (!game) return <div>Game not found</div>;
 
   return (
-    <div>
+    <div className='game-details'>
       <button 
         className="back-button button is-primary"
         //  navigate.push('/')

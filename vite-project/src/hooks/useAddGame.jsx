@@ -13,12 +13,20 @@ const useAddGame = () => {
         body: JSON.stringify(newGame),
       });
       window.location.reload(); // Refreshes the page to show the updated game list
+      const savedGame = await response.json();
+      return savedGame;
     } catch (err) {
       setError(err);
     }
   };
 
-  return { addGame, error };
+  const createGame = (newGame) => {
+    addGame(newGame).then((savedGame) => {
+      setGames([...games, savedGame]);
+    });
+  };
+
+  return { createGame, error };
 };
 
 export default useAddGame;

@@ -3,7 +3,8 @@ import useAddGame from '../../hooks/useAddGame';
 import './addCardModal.css'
 
 const AddCardModal = ({ isOpen, onClose }) => {
-  const { addGame } = useAddGame();
+  // const {addGame}
+  const { createGame } = useAddGame();
   const [formData, setFormData] = useState({
     name: '',
     description: '',
@@ -26,7 +27,8 @@ const AddCardModal = ({ isOpen, onClose }) => {
       players: parseInt(formData.players),
       categories: formData.categories.split(',').map((category) => category.trim()),
     };
-    await addGame(newGame);
+    //await addGame(newGame);
+    await createGame(newGame);
     onClose();
   };
 
@@ -53,7 +55,7 @@ const AddCardModal = ({ isOpen, onClose }) => {
             <label>Categorías (separadas por comas)</label>
             <input type="text" name="categories" value={formData.categories} onChange={handleChange} required />
           </div>
-          <button type="submit"className='submit-button'>Agregar</button>
+          <button type="submit"className='submit-button' onClick={handleSubmit}>Agregar</button>
           <button type="button" className='cancel-button' onClick={onClose}>Cancelar</button>
         </form>
       </div>

@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import CardsSection from '../../components/cardsSection/cardsSection.jsx';
-// import AddButton from '../../components/addButton/addButton.jsx';
 import AddCardModal from '../../components/addCardModal/addCardModal.jsx';
 import useFetchGames from '../../hooks/useFetchGames.jsx';
 import useDeleteGame from '../../hooks/useDeleteGame';
@@ -9,7 +8,8 @@ import './Home.css';
 
 const Home = () => {
   const { games, loading, error } = useFetchGames();
-  const { deleteGame } = useDeleteGame();
+  const { removeGame} = useDeleteGame();
+  //deleteGame
   const [isModalOpen, setModalOpen] = useState(false);
   const navigate = useNavigate();
 
@@ -20,7 +20,8 @@ const Home = () => {
   };
 
   const handleDelete = async (id) => {
-    await deleteGame(id);
+    // await deleteGame(id);
+    await removeGame(id);
   };
 
 //   const handleAdd = () => {
@@ -44,14 +45,13 @@ const Home = () => {
     <div>
       
       <nav className="navbar is-fixed-top" role="navigation" aria-label="main navigation">
-        <h1 className='app-title'><strong>Título de la aplicación</strong></h1>
+        <h1 className='app-title'><strong>UCUlimpiadas 2024</strong></h1>
       </nav>
 
       <div className="main-content">
-        {/* <AddButton onAdd={handleAdd} /> */}
         <button className='add-button' onClick={handleAdd}>Agregar juego</button>
         <CardsSection games={games} onDelete={handleDelete} onShowDetails={handleShowDetails} />
-        <AddCardModal isOpen={isModalOpen} onClose={closeModal} />
+        <AddCardModal isOpen={isModalOpen} onClose={closeModal}/>
       </div>
 
     </div>

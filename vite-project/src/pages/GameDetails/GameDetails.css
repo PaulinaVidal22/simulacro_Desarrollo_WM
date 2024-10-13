@@ -1,0 +1,33 @@
+.game-details {
+    margin-left: 20px;
+    margin-right: 20px;
+    /* background-color: #5789C7; */
+}
+
+
+  .back-button {
+    margin: 5px;
+    color:  #DBD994;
+    background-color: #181849;
+    border-color:  #DBD994;
+
+  }
+
+  .back-button:hover {
+    color: #346C9D;
+    background-color:  #DBD994;
+    border-color: #346C9D;
+
+  }
+
+
+  .game-name {
+    color : #DBD994;
+  }
+
+  .description-field, .players-field, .categories-field {
+    margin: 1rem 5px 1rem 20px ;
+    color:#FBF6F4;
+  }
+
+
