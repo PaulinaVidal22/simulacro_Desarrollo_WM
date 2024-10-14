@@ -1,46 +1,45 @@
 import React from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
-import useFetchGames from '../../hooks/useFetchGames';
+import { useNavigate } from 'react-router-dom';
+import useFetchGame from '../../hooks/useFetchGame';
 import './GameDetails.css'
 
 const GameDetails = () => {
-  const { id } = useParams();
   const navigate = useNavigate();
-  const { games } = useFetchGames();
+  const { game, loading, error } = useFetchGame();
   
-  const game = games.find((game) => game.id === id);
-
-  if (!game) return <div>Game not found</div>;
 
   return (
-    <div className='game-details'>
-      <button 
-        className="back-button button is-primary"
-        //  navigate.push('/')
-        onClick={() =>  navigate("/home")}>Atrás
-      </button>
+    <>
+        {loading && <div>Loading...</div>}
+        {error && <div>Error: {error.message}</div>}
+        {!game && <div>Game not found</div>}
+       {!loading && !error && game && (
+          <div className='game-details'>
+            <button 
+              className="back-button button is-primary"
+              onClick={() => navigate("/home")}>
+              Atrás
+            </button>
+            <div className="game-info">
+              <h2 className='game-name title-is-4'>{game.title}</h2>
+              <p className='game-description'>
+                <strong className='description-field title-is-6'>Descripción: </strong>
+                {game.description}
+              </p>
 
-      <div className="game-info">
-        <h2 className='game-name title-is-4'>{game.title}</h2>
-        <p className='game-description'>
-          <strong className='description-field title-is-6'>
-            Descripción: </strong>
-          {game.description}</p>
+              <p className='game-players'>
+                <strong className='players-field title-is-6'>Cantidad de Jugadores:</strong> 
+                {game.players}
+              </p>
 
-        <p className='game-players'>
-          <strong className='players-field title-is-6'>
-            Cantidad de Jugadores:</strong> 
-            {game.players}</p>
-
-        <p className='game-categories'>
-          <strong className='categories-field title-is-6'>
-            Categorías: </strong>
-            {/* {game.categories.join(', ')} */}
-            {game.categories}</p>
-
-      </div>
-
-    </div>
+              <p className='game-categories'>
+                <strong className='categories-field title-is-6'>Categorías: </strong>
+                {game.categories}
+              </p>
+            </div>
+          </div>
+         )} 
+    </>
   );
 };
 

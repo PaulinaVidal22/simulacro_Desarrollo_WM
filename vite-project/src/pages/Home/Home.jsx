@@ -8,8 +8,7 @@ import './Home.css';
 
 const Home = () => {
   const { games, loading, error } = useFetchGames();
-  const { removeGame} = useDeleteGame();
-  //deleteGame
+  const { removeGame, error: deleteError} = useDeleteGame();
   const [isModalOpen, setModalOpen] = useState(false);
   const navigate = useNavigate();
 
@@ -20,7 +19,6 @@ const Home = () => {
   };
 
   const handleDelete = async (id) => {
-    // await deleteGame(id);
     await removeGame(id);
   };
 
@@ -38,23 +36,27 @@ const Home = () => {
         setModalOpen(false);
     };
 
-  if (loading) return <div>Loading...</div>;
-  if (error) return <div>Error: {error.message}</div>;
 
   return (
-    <div>
+    <>
       
       <nav className="navbar is-fixed-top" role="navigation" aria-label="main navigation">
         <h1 className='app-title'><strong>UCUlimpiadas 2024</strong></h1>
       </nav>
 
       <div className="main-content">
-        <button className='add-button' onClick={handleAdd}>Agregar juego</button>
-        <CardsSection games={games} onDelete={handleDelete} onShowDetails={handleShowDetails} />
-        <AddCardModal isOpen={isModalOpen} onClose={closeModal}/>
+        {loading && <div>Loading...</div>}
+        {error && <div>Error: {error.message}</div>}
+        {!loading && !error && (
+          <>
+            <button className='add-button' onClick={handleAdd}>Agregar juego</button>
+            <CardsSection games={games} onDelete={handleDelete} onShowDetails={handleShowDetails} />
+            <AddCardModal isOpen={isModalOpen} onClose={closeModal} />
+          </>
+        )}
       </div>
 
-    </div>
+    </>
   );
 };
 

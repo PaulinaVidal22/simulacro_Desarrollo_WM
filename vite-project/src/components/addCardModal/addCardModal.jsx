@@ -52,7 +52,7 @@ const AddCardModal = ({ isOpen, onClose }) => {
             <input type="number" title="players" value={formData.players} onChange={handleChange} required />
           </div>
           <div>
-            <label>Categorías (separadas por comas)</label>
+            <label>Categorías (separadas por '/')</label>
             <input type="text" title="categories" value={formData.categories} onChange={handleChange} required />
           </div>
           <button type="submit"className='submit-button' onClick={handleSubmit}>Agregar</button>
