@@ -6,17 +6,17 @@ const AddCardModal = ({ isOpen, onClose }) => {
   // const {addGame}
   const { createGame } = useAddGame();
   const [formData, setFormData] = useState({
-    name: '',
+    title: '',
     description: '',
     players: '',
     categories: '',
   });
 
   const handleChange = (e) => {
-    const { name, value } = e.target;
+    const { title, value } = e.target;
     setFormData({
       ...formData,
-      [name]: value,
+      [title]: value,
     });
   };
 
@@ -41,19 +41,19 @@ const AddCardModal = ({ isOpen, onClose }) => {
         <form onSubmit={handleSubmit}>
           <div>
             <label>Nombre</label>
-            <input type="text" name="name" value={formData.name} onChange={handleChange} required />
+            <input type="text" title="title" value={formData.title} onChange={handleChange} required />
           </div>
           <div>
             <label>Descripción</label>
-            <input name="description" value={formData.description} onChange={handleChange} required />
+            <input title="description" value={formData.description} onChange={handleChange} required />
           </div>
           <div>
             <label>Cantidad de Jugadores</label>
-            <input type="number" name="players" value={formData.players} onChange={handleChange} required />
+            <input type="number" title="players" value={formData.players} onChange={handleChange} required />
           </div>
           <div>
             <label>Categorías (separadas por comas)</label>
-            <input type="text" name="categories" value={formData.categories} onChange={handleChange} required />
+            <input type="text" title="categories" value={formData.categories} onChange={handleChange} required />
           </div>
           <button type="submit"className='submit-button' onClick={handleSubmit}>Agregar</button>
           <button type="button" className='cancel-button' onClick={onClose}>Cancelar</button>
