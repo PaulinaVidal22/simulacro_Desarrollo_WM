@@ -16,7 +16,7 @@ const useFetchGame = () => {
     try {
       const response = await fetch( url , { method: "GET" })
       const data = await response.json();
-      setGame(data);
+      setGame(data[0]);
       setLoading(false);
 
     } catch (err) {
